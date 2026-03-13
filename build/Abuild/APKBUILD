@@ -1,6 +1,6 @@
 pkgname=zsh
 pkgver=5.9
-pkgrel=5
+pkgrel=${pkgrel:-0}
 pkgdesc="Very advanced and programmable command interpreter (shell)"
 url="https://www.zsh.org/"
 arch="all"
@@ -134,6 +134,7 @@ _completion() {
     done
 }
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 d9138b7f379ad942a5f46819d2dd52d31f3a1129f2a0d1b53d4c5cd43c318b60396da6d37c57c477b8e958fb750209aca0ae93f8c9dd42ac958de006a0ff067e  zsh-5.9.tar.xz
 e5d23654e3c61f89a183d8f95a822d8f781b1343cbb3fd84b29e0abf033fc023c4a67ce4c0be00dc9a0584ba2f355edcd489d3c12be1433781b8b631581c5744  configure-shared.patch
